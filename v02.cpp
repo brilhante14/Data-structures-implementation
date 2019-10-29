@@ -57,8 +57,8 @@ struct DicioDisp{
     }
     void insercao(unsigned int p, Noh* noh, Noh** v){
         if(v[p] == nullptr){
-            noh->prox = nullptr;
             v[p] = noh;
+            v[p]->prox = nullptr;
         }
         else{
             noh->prox = v[p];
@@ -81,11 +81,13 @@ struct DicioDisp{
             Noh* j;
             j= va[i];          
             while(j->prox !=nullptr){ 
-                Noh* aux = j;
-                insercao(posicao,aux,vector_a);
-                j = j->prox;                
+                Noh aux = j->prox;
+                insercao(posicao,j,vector_a);
+                j = &aux;         
+                cout << j;     
             }           
             insercao(posicao,j,vector_a);
+            cout << "Ass\n\n";
         }
         // for(int i=0; i<m; i+=1){
         //     if(vector_a[i] == nullptr){
@@ -131,16 +133,16 @@ int main(){
     d.inicializar();
     cout << "Ola\n";
     d.inserir(8,'c');
-    cout << "\n";
+    cout << "QQ\n";
     d.inserir(16,'d');
-    d.print();
-    cout << "\n";  
-    d.inserir(24,'e');
-    d.print();
-    cout << "\n";
-    d.inserir(32,'f');
-    d.print();
-    cout << "\n";
-    d.inserir(40,'b');
-    d.print();
+    //d.print();
+    //cout << "\n";  
+    //d.inserir(24,'e');
+    //d.print();
+    //cout << "\n";
+    //d.inserir(32,'f');
+    //d.print();
+    //cout << "\n";
+    //d.inserir(40,'b');
+    //d.print();
 }
