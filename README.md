@@ -1,3 +1,3 @@
 # Estrutura de Dados
-## Pablo Mayckon
-Trabalhos da disciplina
+
+Trabalhos da disciplina e implementação de estruturas usadas em C++;
